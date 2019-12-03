@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="container">
+
+
+<h2>Full Branch Details!!</h2>
+
+
+ <table border="1">
+ <tr>
+  <th style="padding:10px" >IFSC</th>
+  <th style="padding:10px" >Bank ID</th>
+  <th style="padding:10px" >Branch</th>
+  <th style="padding:10px" >Address</th>
+  <th style="padding:10px" >City</th>
+  <th style="padding:10px" >District</th>
+  <th style="padding:10px" >State</th>
+  <th style="padding:10px" >Bank Name</th>  
+ </tr>
+
+{% for a_branch in branch_list %}
+	
+ <tr>
+  <td style="padding:10px" >{{ a_branch.ifsc }}</td>
+  <td style="padding:10px" >{{ a_branch.bank_id }}</td>
+  <td style="padding:10px" >{{ a_branch.branch }}</td>
+  <td style="padding:10px" >{{ a_branch.address }}</td>
+  <td style="padding:10px" >{{ a_branch.city }}</td>
+  <td style="padding:10px" >{{ a_branch.district }}</td>
+  <td style="padding:10px" >{{ a_branch.state }}</td>
+  <td style="padding:10px" >{{ a_branch.bank_name }}</td>
+ </tr> 
+ 
+ <!--
+    <li>{{ bank.id }}</li>
+    <li>{{ bank.name }}</li>
+     -->
+
+{% endfor %}
+</table>
+
+</div>
+
+{% endblock %}
